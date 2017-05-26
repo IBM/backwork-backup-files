@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""File Backup module for Monsoon
+"""File backup module for Monsoon
 """
 
 import logging
