@@ -27,7 +27,7 @@ class FileSystemBackup(object):
     @classmethod
     def parse_args(cls, subparsers):
         """Create the `filesystem` subparser for the `backup` command.
-        :param subparsers:
+        :param subparsers: Main argument parser
         """
         fs_parser = subparsers.add_parser(cls.command, description=cls.__doc__)
 
