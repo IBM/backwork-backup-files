@@ -14,7 +14,7 @@ deploy:
   script: ci/push.sh
   on:
     tags: true
-    repo: bdu/companion-cube-ruby
+    repo: apset/monsoon-backup-files
 
 notifications:
   slack:
