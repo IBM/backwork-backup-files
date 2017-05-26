@@ -13,8 +13,4 @@ repository: ${ART_PY_URL:?}
 username: ${ART_USERNAME:?}
 password: ${ART_API_KEY:?}" > ~/.pypirc
 
-# Log into Artifactory
-curl -su "$ART_USERNAME:$ART_API_KEY" "$ART_URL/api/v1/api_key.yaml" > ~/.gem/credentials
-chmod 0600 ~/.gem/credentials
-
-gem push companion_cube*.gem --host "$ART_URL"#!/usr/bin/env bash
+python setup.py sdist upload -r local

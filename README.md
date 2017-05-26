@@ -20,7 +20,7 @@ extra-index-url = https://<USERNAME>:<API KEY>@na.artifactory.swg-devops.com/art
 
 After that you should be able to run
 ```sh
-$ pip install monsoon-backup-fileystem
+$ pip install monsoon-backup-files
 ```
 
 Alternatively, you can install it directly from GHE:
