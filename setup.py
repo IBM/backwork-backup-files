@@ -8,13 +8,13 @@ with open(path.join(here, 'README.md')) as f:
     long_description = f.read()
 
 setup(
-    name="monsoon-backup-mysql",
+    name="monsoon-backup-filesystem",
     version="0.1.0",
-    description="Monsoon plug-in for MySQL backups.",
+    description="Monsoon plug-in for filesystem backups.",
     long_description=long_description,
-    url="https://github.ibm.com/apset/monsoon-backup-mysql",
-    author="Luiz Aoqui",
-    author_email="laoqui@ca.ibm.com",
+    url="https://github.ibm.com/apset/monsoon-backup-filesystem",
+    author="Leons Petrazickis",
+    author_email="leonsp@ca.ibm.com",
     license="IBM",
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -24,7 +24,6 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 2 :: Only",
-        "Topic :: Database",
         "Topic :: System :: Archiving :: Backup",
         "Topic :: Utilities"
     ],
@@ -34,7 +33,7 @@ setup(
     ],
     entry_points={
         "monsoon.backups": [
-            "mysql=mysql:MySQLBackup"
+            "filesystem=filesystem:FileSystemBackup"
         ]
     }
 )

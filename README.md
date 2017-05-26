@@ -1,17 +1,16 @@
-# monsoon-backup-mysql
-Add support for MySQL backups on [`monsoon`](https://github.ibm.com/apset/monsoon).
+# monsoon-backup-filesystem
+Add support for filesystem backups on [`monsoon`](https://github.ibm.com/apset/monsoon).
 
 ## Requirements
-This plug-in is build on top of [`mysqldump`](http://dev.mysql.com/doc/refman/en/mysqldump.html),
-so you will need to it installed.
-
-`mysqldump` is part of the `mysql` client.cd .
+This plug-in is build on top of [`tar`](https://linux.die.net/man/1/tar).
 
 ## Installing
 You can use `pip` to install this plug-in from Artifactory.
 
 First you will need to configure your pip client by creating or editing the
-`~/.pip/pip.conf` file to look like this:
+`~/.pip/pip.conf` file to look like the example below.
+
+**Note:** Remember to change `@` into `%40` in your username!
 
 ```
 [global]
@@ -21,47 +20,43 @@ extra-index-url = https://<USERNAME>:<API KEY>@na.artifactory.swg-devops.com/art
 
 After that you should be able to run
 ```sh
-$ pip install monsoon-backup-mysql
+$ pip install monsoon-backup-fileystem
 ```
 
 Alternatively, you can install it directly from GHE:
 ```sh
-$ pip install git+ssh://git@github.ibm.com/apset/monsoon-backup-mysql
+$ pip install git+ssh://git@github.ibm.com/apset/monsoon-backup-filesystem
 ```
 
 ## Using
-After installing the plug-in you will be able to use the `backup mysql` command
+After installing the plug-in you will be able to use the `backup filesystem` command
 on `monsoon`.
 
 ```sh
-$ monsoon backup mysql -h
-usage: monsoon backup mysql [-h] [--gzip] [-o OUTPUT]
+$ monsoon backup filesystem -h
+usage: monsoon backup filesystem [-h] -f FILE
 
-Backup a MySQL database. It uses `mysqldump` so it's required to have it
-installed and added to the system's PATH. You can use any of the arguments
-supported by `mysqldump`. Use `mysqldump -h` for more information.
+Backup a filesystem location. It uses `tar -cz` and gzips the output. You can
+use any of the arguments supported by `tar`. Add a list of files and
+directories you want backed up as the last thing in the line. Use `tar --help`
+for more information.
 
 optional arguments:
   -h, --help            show this help message and exit
-  --gzip                compress output file  (requires gzip to be installed)
-  -o OUTPUT, --output OUTPUT
-                        output file path
+  -f FILE, --file FILE  output gzipped file path
 ```
 
 You can pass any option that you would normally use on `mysqldump`:
 
 ```sh
-$ monsoon backup mysql --host 192.168.99.1 -u root -ppassword --port 32769 --all-databases
+$ monsoon backup filesystem -f foo.tgz --verbose /tmp /var/log
 ```
 
-As shown in the `--help` message, there are two extra arguments you can use in
-your backup process `--gzip` and `-o`.
+As shown in the `--help` message, there is one required arguments you
+must use in your backup process.
 
-`--gzip` will compress the output and requires the `gzip` command to be
-available in your system.
-
-`-o OUTPUT` or `--output OUTPUT` will save the output of `mysqldump` into a
+`-f FILE` or `--file FILE` will save the output of `tar` into a
 file.
 
 **Important:** There is a conflict with the `-h` argument since it is reserved
-for the help/usage message. User `--host` to pass the hostname.
+for the help/usage message. Use `--dereference` to follow symlinks.
