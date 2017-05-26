@@ -1,8 +1,8 @@
 """File backup module for Monsoon
 """
 
-from setuptools import setup, find_packages
 from os import path
+from setuptools import setup, find_packages
 
 HERE = path.abspath(path.dirname(__file__))
 
