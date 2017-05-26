@@ -8,11 +8,11 @@ with open(path.join(here, 'README.md')) as f:
     long_description = f.read()
 
 setup(
-    name="monsoon-backup-filesystem",
+    name="monsoon-backup-files",
     version="0.1.0",
-    description="Monsoon plug-in for filesystem backups.",
+    description="Monsoon plug-in for file backups.",
     long_description=long_description,
-    url="https://github.ibm.com/apset/monsoon-backup-filesystem",
+    url="https://github.ibm.com/apset/monsoon-backup-files",
     author="Leons Petrazickis",
     author_email="leonsp@ca.ibm.com",
     license="IBM",
@@ -33,7 +33,7 @@ setup(
     ],
     entry_points={
         "monsoon.backups": [
-            "filesystem=filesystem:FileSystemBackup"
+            "files=files:FilesBackup"
         ]
     }
 )
