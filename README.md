@@ -1,4 +1,7 @@
 # monsoon-backup-files
+
+[![Build Status](https://travis.ibm.com/apset/monsoon-backup-files.svg?token=sEYcW68KU3tGRyi3z1eH&branch=master)](https://travis.ibm.com/apset/monsoon-backup-files)
+
 Add support for file backups on [`monsoon`](https://github.ibm.com/apset/monsoon).
 
 ## Requirements
