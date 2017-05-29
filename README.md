@@ -60,3 +60,12 @@ file.
 
 **Important:** There is a conflict with the `-h` argument since it is reserved
 for the help/usage message. Use `--dereference` to follow symlinks.
+
+## Building and Publishing
+
+Travis will publish builds for you. To build, push a tag to the repo:
+
+```
+git tag -a v0.1.2 -m 'v0.1.2'
+git push --tags
+```
