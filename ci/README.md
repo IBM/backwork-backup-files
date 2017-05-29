@@ -2,26 +2,21 @@
 
 ## Artifactory
 
-The following commands were used to configure CI with Travis (one-time setup).
+At this time, .travis.yml is used directly for pushing the gem to
+Artifactory.
 
-Access travis:
+If you need to encrypt a new Artifactory password, use this command:
+
+```shell
+travis encrypt --add deploy.password
+```
+
+You may first need to install and log into the Travis client:
 
 ```shell
 gem install travis --no-rdoc --no-ri
 travis login -X -g <...>
 ```
-
-Do actual setup:
-
-```shell
-travis env set ART_URL <...>
-travis env set ART_USERNAME <...>
-travis env set ART_API_KEY <...>
-```
-
-`ART_URL` should resemble `https://na.artifactory.swg-devops.com/artifactory/api/pypi/apset-pypi-local`
-
-Keep `@` as `@` in `ART_USERNAME`
 
 ## Slack
 
