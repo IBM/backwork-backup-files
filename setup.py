@@ -12,7 +12,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="monsoon-backup-files",
-    version="0.1.0",
+    version="0.1.2",
     description="Monsoon plug-in for file backups.",
     long_description=LONG_DESCRIPTION,
     url="https://github.ibm.com/apset/monsoon-backup-files",
@@ -32,7 +32,7 @@ setup(
     ],
     packages=find_packages(),
     install_requires=[
-        "monsoon>=0.1.0"
+        "monsoon-cli>=0.1.4"
     ],
     entry_points={
         "monsoon.backups": [
