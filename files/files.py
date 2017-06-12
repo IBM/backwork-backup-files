@@ -23,6 +23,7 @@ class FilesBackup(object):
 
         self.args = args
         self.extra = extra
+        self.result = ""
 
     @classmethod
     def parse_args(cls, subparsers):
@@ -38,9 +39,11 @@ class FilesBackup(object):
         """Backup one or more files."""
         LOGGER.info("starting file backup...")
 
+        tar_cmd = ["tar", "-cz", "-f", self.args.output] + self.extra
+
         try:
-            tar_cmd = ["tar", "-cz", "-f", self.args.output] + self.extra
-            subprocess.Popen(tar_cmd)
+            self.result = subprocess.check_output(tar_cmd, stderr=subprocess.STDOUT)
+            LOGGER.info("output:\n\n\t%s", "\n\t".join(self.result.split("\n")))
             LOGGER.info("file backup complete")
         except Exception as error:
             LOGGER.error("Failed to backup files")
