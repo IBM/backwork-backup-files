@@ -1,4 +1,4 @@
-"""File backup module for Monsoon
+"""File backup module for Backwork
 """
 
 from os import path
@@ -11,20 +11,22 @@ with open(path.join(HERE, 'README.md')) as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
-    name="monsoon-backup-files",
+    name="backwork-backup-files",
     version="0.1.3",
-    description="Monsoon plug-in for file backups.",
+    description="Backwork plug-in for file backups.",
     long_description=LONG_DESCRIPTION,
-    url="https://github.ibm.com/apset/monsoon-backup-files",
+    long_description_content_type="text/markdown",
+    url="https://github.com/IBM/backwork-backup-files",
     author="Leons Petrazickis",
     author_email="leonsp@ca.ibm.com",
-    license="IBM",
+    license="Apache 2",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
         "Operating System :: POSIX :: Linux",
+        'License :: OSI Approved :: Apache Software License',
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 2 :: Only",
         "Topic :: System :: Archiving :: Backup",
@@ -32,7 +34,7 @@ setup(
     ],
     packages=find_packages(),
     install_requires=[
-        "monsoon-cli>=0.1.4"
+        "backwork"
     ],
     entry_points={
         "monsoon.backups": [
