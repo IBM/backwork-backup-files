@@ -37,7 +37,7 @@ setup(
         "backwork"
     ],
     entry_points={
-        "monsoon.backups": [
+        "backwork.backups": [
             "files=files:FilesBackup"
         ]
     }

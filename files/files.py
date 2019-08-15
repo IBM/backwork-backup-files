@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""File backup module for Monsoon
+"""File backup module for backwork
 """
 
 import logging
@@ -42,8 +42,10 @@ class FilesBackup(object):
         tar_cmd = ["tar", "-cz", "-f", self.args.output] + self.extra
 
         try:
-            self.result = subprocess.check_output(tar_cmd, stderr=subprocess.STDOUT)
-            LOGGER.info("output:\n\n\t%s", "\n\t".join(self.result.split("\n")))
+            self.result = subprocess.check_output(
+                tar_cmd, stderr=subprocess.STDOUT)
+            LOGGER.info("output:\n\n\t%s", "\n\t".join(
+                self.result.split("\n")))
             LOGGER.info("file backup complete")
         except Exception as error:
             LOGGER.error("Failed to backup files")

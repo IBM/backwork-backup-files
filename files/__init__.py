@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""File backup module for Monsoon
+"""File backup module for backwork
 """
 
 from .files import FilesBackup

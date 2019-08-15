@@ -1,0 +1,16 @@
+language: python
+python: '3.6'
+cache:
+  pip: true
+install:
+- pip install .
+script:
+- echo "no tests implemented"
+deploy:
+  - provider: pypi
+    user: __token__
+    password:
+      secure: EZc+rDuDh30jjHvpiHl9DnpJjhHtWJuzDtd35cOf3ZLpwyq1XZZVNaAKvz705zKesvYgrUkZibrlQ3n8N7Nw6zYcr0OmPmL5FaMklUyBmBZsOowcdvQ3dcF2HBD1AE/lUJ7Xi9DBZ41VsXe/iLABCS5xKwtsVe7sMjMQzJGzzaw6cZGUMQn6Mfwq1Bl6GPhwyNq+oZIKY5CyPZGzG18FmTekLwARYLWQerSECgIxNki2wzq/0hti2Uzd2M3SQ6AzNoF6NFw3vKRO6PbnGXGzAq1qWFq/FHxgRVTcOJDT2I5mhWbVnJoYEPaDEAr+ERBjpYYg6DgevRk2YM5ulgc6wgBZ0wDMamTt47oDtxuQ1ZglxPrCJs3YwtOWFb3mQrn4yK/USDi6RE4gtgEUV4ZLzELyy/H5Ih2lfxRo/BmQvlrKEqow74JlstkIMrEwrN1yOcMGEdN8L65epiRmsXHs7yt8yB+jRMZpOt2rIBvoVznIVb9vDIUrKHEVDjGORY9DjudQ+LB+9EOR5XLK2HM5qyxwqf/1/Y2g5i2iQHga5GqBPuyNavrsQAh1nezmK5/w0bGQaVpNwdc/2icNKjfZiTBbocOC2tb9heQcnNQxCTU6FyZbzukWmrDLHRv87rLAh8/pfaXNbO/PbCGH7ujDEMnXIZyl6ZxzcJzo1TD8Wsk=
+    on:
+      tags: true
+      repo: IBM/backwork-backup-files

@@ -1,43 +1,23 @@
-# monsoon-backup-files
+# backwork-backup-files [![Build Status](https://travis-ci.org/IBM/backwork-backup-files.svg?branch=master)](https://travis-ci.org/IBM/backwork-backup-files) [![PyPI version](https://badge.fury.io/py/backwork-backup-files.svg)](https://badge.fury.io/py/backwork-backup-files)
 
-[![Build Status](https://travis.ibm.com/apset/monsoon-backup-files.svg?token=sEYcW68KU3tGRyi3z1eH&branch=master)](https://travis.ibm.com/apset/monsoon-backup-files)
-
-Add support for file backups on [`monsoon`](https://github.ibm.com/apset/monsoon).
+Add support for file backups on [`backwork`](https://github.com/IBM/backwork).
 
 ## Requirements
 This plug-in is build on top of [`tar`](https://linux.die.net/man/1/tar).
 
 ## Installing
-You can use `pip` to install this plug-in from Artifactory.
-
-First you will need to configure your pip client by creating or editing the
-`~/.pip/pip.conf` file to look like the example below.
-
-**Note:** Remember to change `@` into `%40` in your username!
-
-```
-[global]
-index-url = https://pypi.python.org/simple
-extra-index-url = https://<USERNAME>:<API KEY>@na.artifactory.swg-devops.com/artifactory/api/pypi/apset-pypi-local/simple
-```
-
-After that you should be able to run
+You can use `pip` to install this plug-in:
 ```sh
-$ pip install monsoon-backup-files
-```
-
-Alternatively, you can install it directly from GHE:
-```sh
-$ pip install git+ssh://git@github.ibm.com/apset/monsoon-backup-files
+$ pip install backwork-backup-files
 ```
 
 ## Using
 After installing the plug-in you will be able to use the `backup files` command
-on `monsoon`.
+on `backwork`.
 
 ```sh
-$ monsoon backup files -h
-usage: monsoon backup files [-h] -f FILE
+$ backwork backup files -h
+usage: backwork backup files [-h] -f FILE
 
 Back up one or more files. It uses `tar -cz` which gzips the output. You can
 use any of the arguments supported by `tar`. Add a list of files and
@@ -52,7 +32,7 @@ optional arguments:
 You can pass any option that you would normally use on `mysqldump`:
 
 ```sh
-$ monsoon backup files -o foo.tgz --verbose /tmp /var/log
+$ backwork backup files -o foo.tgz --verbose /tmp /var/log
 ```
 
 As shown in the `--help` message, there is one required arguments you
