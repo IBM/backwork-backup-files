@@ -39,6 +39,9 @@ setup(
     entry_points={
         "backwork.backups": [
             "files=files:FilesBackup"
+        ],
+        "backwork.restores": [
+            "files=files:FilesRestore"
         ]
     }
 )

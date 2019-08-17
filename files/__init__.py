@@ -3,3 +3,4 @@
 """
 
 from .files import FilesBackup
+from .files import FilesRestore
