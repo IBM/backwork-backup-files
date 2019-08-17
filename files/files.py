@@ -52,7 +52,7 @@ class FilesBackup(object):
 
 
 class FilesRestore(object):
-    """Restore up one or more files from a .tar.gz file.
+    """Restore one or more files from a .tar.gz file.
 
     It uses `tar xvzf`. You can use any of the
     arguments supported by `tar`. Use `tar --help` for more information.

@@ -48,7 +48,7 @@ file.
 ```sh
 usage: backwork restore files [-h] input
 
-Restore up one or more files from a .tar.gz file. It uses `tar xvzf`. You can
+Restore one or more files from a .tar.gz file. It uses `tar xvzf`. You can
 use any of the arguments supported by `tar`. Use `tar --help` for more
 information.
 
