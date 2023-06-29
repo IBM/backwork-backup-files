@@ -2,17 +2,18 @@
 """
 
 from os import path
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 HERE = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(HERE, 'README.md')) as f:
+with open(path.join(HERE, "README.md")) as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
     name="backwork-backup-files",
-    version="0.3.0",
+    version="0.3.1",
     description="Backwork plug-in for file backups.",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -26,22 +27,16 @@ setup(
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
         "Operating System :: POSIX :: Linux",
-        'License :: OSI Approved :: Apache Software License',
+        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 2 :: Only",
         "Topic :: System :: Archiving :: Backup",
-        "Topic :: Utilities"
+        "Topic :: Utilities",
     ],
     packages=find_packages(),
-    install_requires=[
-        "backwork"
-    ],
+    install_requires=["backwork"],
     entry_points={
-        "backwork.backups": [
-            "files=files:FilesBackup"
-        ],
-        "backwork.restores": [
-            "files=files:FilesRestore"
-        ]
-    }
+        "backwork.backups": ["files=files:FilesBackup"],
+        "backwork.restores": ["files=files:FilesRestore"],
+    },
 )
